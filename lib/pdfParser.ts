@@ -32,9 +32,9 @@ export function extractInfoFromText(text: string) {
   };
 }
 
+const pdfParse = require('pdf-parse/lib/pdf-parse');
+
 export async function parsePdf(buffer: Buffer) {
-  const pdfModule = await import('pdf-parse');
-  const pdfParse = pdfModule.default ?? pdfModule;
   const data = await pdfParse(buffer);
   return data.text;
 }
