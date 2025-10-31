@@ -1,7 +1,7 @@
 // @ts-check
 'use strict';
 
-// Disable Turbopack and use webpack
+// Disable Turbopack
 process.env.TURBOPACK = '0';
 process.env.TURBOPACK_BUILD = '0';
 process.env.USE_TURBOPACK = '0';

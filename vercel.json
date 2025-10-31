@@ -25,6 +25,7 @@
     "env": 
     {
         "NODE_ENV": "production",
-        "TURBOPACK": "0"
+        "TURBOPACK": "0",
+        "NEXT_DISABLE_TURBOPACK": "1"
     }
 }

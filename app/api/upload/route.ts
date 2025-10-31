@@ -1,4 +1,19 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
+
+// This is a placeholder response since we can't process files in a static export
+// In a real static site, you would need to use a serverless function or external API
+// to handle file uploads and processing
+
+export async function POST() {
+  return NextResponse.json(
+    {
+      success: false,
+      error: 'File upload is not available in static export mode. Please use a serverless function or external API for file processing.'
+    },
+    { status: 400 }
+  );
+}
+
 import { writeFile, mkdir, unlink } from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
@@ -63,11 +78,6 @@ export interface ResumeResponse {
   } | null;
   error?: string;
 }
-
-export const dynamic = 'force-dynamic';
-export const maxDuration = 300; 
-export const fetchCache = 'force-no-store';
-export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
   try {
