@@ -4,18 +4,11 @@
     [
         {
             "src": "package.json",
-            "use": "@vercel/next",
-            "config": 
-            {
-                "distDir": ".next"
-            }
+            "use": "@vercel/next"
         }
     ],
     "routes": 
     [
-        {
-            "handle": "filesystem"
-        },
         {
             "src": "/_next/static/(.*)",
             "dest": "/_next/static/$1"
@@ -29,5 +22,9 @@
             "dest": "/"
         }
     ],
-    "buildCommand": "npm run build"
+    "env": 
+    {
+        "NODE_ENV": "production",
+        "TURBOPACK": "0"
+    }
 }

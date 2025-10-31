@@ -4,6 +4,11 @@
 // Disable Turbopack and use webpack
 process.env.TURBOPACK = '0';
 process.env.TURBOPACK_BUILD = '0';
+process.env.USE_TURBOPACK = '0';
+process.env.NEXT_DISABLE_TURBOPACK = '1';
+
+// Force webpack
+process.env.BUNDLER = 'webpack';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
