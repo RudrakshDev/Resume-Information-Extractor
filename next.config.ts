@@ -1,10 +1,9 @@
-import type { NextConfig } from "next";
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    // Ignore TypeScript errors during build
+    // This allows production builds even if there are type errors
     ignoreBuildErrors: true,
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
