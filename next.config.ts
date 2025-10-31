@@ -1,8 +1,12 @@
 // @ts-check
 'use strict';
 
+// Disable Turbopack and use webpack
+process.env.TURBOPACK = '0';
+process.env.TURBOPACK_BUILD = '0';
+
 /** @type {import('next').NextConfig} */
-const nextConfig: import('next').NextConfig = {
+const nextConfig = {
   // Disable React StrictMode for static exports
   reactStrictMode: false,
   

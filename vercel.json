@@ -4,18 +4,21 @@
     [
         {
             "src": "package.json",
-            "use": "@vercel/next"
+            "use": "@vercel/next",
+            "config": 
+            {
+                "distDir": ".next"
+            }
         }
     ],
     "routes": 
     [
         {
-            "src": "/_next/static/(.*)",
-            "dest": "/_next/static/$1"
+            "handle": "filesystem"
         },
         {
-            "src": "/_next/image(.*)",
-            "dest": "/_next/image$1"
+            "src": "/_next/static/(.*)",
+            "dest": "/_next/static/$1"
         },
         {
             "src": "/static/(.*)",
@@ -25,5 +28,6 @@
             "src": "/(.*)",
             "dest": "/"
         }
-    ]
+    ],
+    "buildCommand": "npm run build"
 }
