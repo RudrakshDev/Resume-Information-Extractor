@@ -33,7 +33,8 @@ export function extractInfoFromText(text: string) {
 }
 
 export async function parsePdf(buffer: Buffer) {
-  const { default: pdfParse } = await import('pdf-parse');
+  const pdfModule = await import('pdf-parse');
+  const pdfParse = pdfModule.default ?? pdfModule;
   const data = await pdfParse(buffer);
   return data.text;
 }
