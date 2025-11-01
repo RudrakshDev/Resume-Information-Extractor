@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Resume Information Extractor
+
+A full-stack web application that extracts and highlights key information from resumes in PDF format. The application identifies and extracts details such as name, college/university, projects, achievements, and contact information.
+
+## Features
+
+- Upload PDF resumes
+- Extract key information using text parsing and pattern matching
+- Display the uploaded PDF with highlighted extracted information
+- Clean, responsive UI built with Tailwind CSS
+- Real-time processing and feedback
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+- **Backend**: Node.js, Express
+- **Libraries**:
+  - pdf-parse: For text extraction from PDFs
+  - @react-pdf-viewer: For PDF viewing and highlighting
+  - multer: For file upload handling
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v16 or later)
+- npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd resume-code
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-## Learn More
+3. Start the development servers:
+   - In one terminal, start the Next.js frontend:
+     ```bash
+     npm run dev
+     ```
+   - In another terminal, start the Express backend:
+     ```bash
+     cd server
+     npm install
+     node index.js
+     ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to access the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How It Works
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Upload**: Users can drag and drop or select a PDF resume file.
+2. **Process**: The backend processes the PDF to extract text and identify key information.
+3. **Display**: The frontend displays the PDF with highlighted sections and shows the extracted information in a clean, organized format.
 
-## Deploy on Vercel
+## Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can modify the text extraction patterns in `server/index.js` to better match different resume formats. The current implementation uses simple regex patterns that can be adjusted as needed.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
